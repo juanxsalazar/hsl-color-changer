@@ -12,7 +12,8 @@ body {
   background-color: rgb(172, 169, 154)
 }
 
-h1 {text-align: center;}
+h1 {text-align: center;
+}
 
 header section {display: flex;
 flex-direction: row;

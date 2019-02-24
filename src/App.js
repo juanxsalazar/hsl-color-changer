@@ -20,6 +20,19 @@ class App extends Component {
     this.setState({ lightness: event.target.value })
   }
 
+
+  randomhsl = () => {
+    this.setState ({
+      hue: Math.round(Math.random() * 360),
+      saturation: Math.round(Math.random() * 100),
+      lightness: Math.round(Math.random() * 100)
+    })
+  }
+
+  // componentDidMount(){
+  //   this.randomhsl()
+  // } compondidmount makes it where the color will be random when it first load. hsl starts at 0 when this is commented.
+
   saveColor = event => {
     const color = {
       myHue: this.state.hue,
@@ -57,6 +70,7 @@ class App extends Component {
           <button className="save-color" onClick={this.saveColor}>
             Remember Color
           </button>
+          <button onClick={this.randomhsl}>Random Color</button>
         </section>
         <section className="saved-list">
           <h2>Saved Colors:</h2>
