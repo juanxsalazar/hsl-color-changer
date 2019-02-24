@@ -38,18 +38,9 @@ class App extends Component {
           <h1 style={{ color: `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness}%)`}}>
           HSL Color Changer</h1>
           <section>
-            <section
-              className="square"
-              style={{
-                backgroundColor: `hsl(${this.state.hue},${
-                  this.state.saturation
-                }%,${this.state.lightness}%)`
-              }}
-            />  <p>
-            HSL: ({this.state.hue}, {this.state.saturation}%, {this.state.lightness}%)
-          </p>
-          </section>
-             <section className="controls">
+            <section className="square" style={{
+              backgroundColor: `hsl(${this.state.hue},${this.state.saturation}%,${this.state.lightness}%)`}} />  
+         <section className="controls">
           <h3>Hue</h3>
           <input type="range" value={this.state.hue} onChange={this.changeHue} max="360" />
           <h3>Saturation</h3>
@@ -57,6 +48,10 @@ class App extends Component {
           <h3>Lightness</h3>
           <input type="range" value={this.state.lightness} onChange={this.changeLightness} />
           </section>
+          </section>
+          <p>
+            HSL: ({this.state.hue}, {this.state.saturation}%, {this.state.lightness}%)
+          </p>       
         </header> 
           <section className="middle">
           <button className="save-color" onClick={this.saveColor}>
@@ -64,7 +59,7 @@ class App extends Component {
           </button>
         </section>
         <section className="saved-list">
-          <h2 className="saved-list-header">Saved Colors: </h2>
+          <h2>Saved Colors:</h2>
           <ul>
             {this.state.savedColors.map(color => {
               return (
@@ -77,7 +72,7 @@ class App extends Component {
                       }%,${color.myLightness}%)`
                     }}
                   />
-                  <p className="color-values">
+                  <p className="small-font">
                     HSL: ({color.myHue}, {color.mySaturation}%, {color.myLightness}%)
                   </p>
                 </li>
